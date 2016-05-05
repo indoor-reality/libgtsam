@@ -1,6 +1,6 @@
 /* ----------------------------------------------------------------------------
 
- * GTSAM Copyright 2010, Georgia Tech Research Corporation, 
+ * GTSAM Copyright 2010, Georgia Tech Research Corporation,
  * Atlanta, Georgia 30332-0415
  * All Rights Reserved
  * Authors: Frank Dellaert, et al. (see THANKS for the full author list)
@@ -194,7 +194,7 @@ namespace gtsam {
      * @return incremental rotation matrix
      */
     static Rot3 rodriguez(double wx, double wy, double wz)
-      { return rodriguez((Vector(3) << wx, wy, wz));}
+      { return rodriguez((Vector(3) << wx, wy, wz).finished());}
 
     /// @}
     /// @name Testable

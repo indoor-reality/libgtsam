@@ -1,6 +1,6 @@
 /* ----------------------------------------------------------------------------
 
- * GTSAM Copyright 2010, Georgia Tech Research Corporation, 
+ * GTSAM Copyright 2010, Georgia Tech Research Corporation,
  * Atlanta, Georgia 30332-0415
  * All Rights Reserved
  * Authors: Frank Dellaert, et al. (see THANKS for the full author list)
@@ -172,7 +172,8 @@ public:
   static inline Point2 Expmap(const Vector& v) { return Point2(v); }
 
   /// Log map around identity - just return the Point2 as a vector
-  static inline Vector Logmap(const Point2& dp) { return (Vector(2) << dp.x(), dp.y()); }
+  static inline Vector Logmap(const Point2& dp)
+    { return (Vector(2) << dp.x(), dp.y()).finished(); }
 
   /// @}
   /// @name Vector Space

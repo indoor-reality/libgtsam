@@ -1,6 +1,6 @@
 /* ----------------------------------------------------------------------------
 
- * GTSAM Copyright 2010, Georgia Tech Research Corporation, 
+ * GTSAM Copyright 2010, Georgia Tech Research Corporation,
  * Atlanta, Georgia 30332-0415
  * All Rights Reserved
  * Authors: Frank Dellaert, et al. (see THANKS for the full author list)
@@ -219,11 +219,13 @@ public:
      * @return xihat, 4*4 element of Lie algebra that can be exponentiated
      */
     static Matrix wedge(double wx, double wy, double wz, double vx, double vy, double vz) {
-      return (Matrix(4,4) <<
-          0.,-wz,  wy,  vx,
-          wz,  0.,-wx,  vy,
-          -wy, wx,   0., vz,
-          0.,  0.,  0.,  0.);
+      return (
+          Matrix(4,4) <<
+          0., -wz,  wy, vx,
+          wz,  0., -wx, vy,
+          -wy, wx,  0., vz,
+          0.,  0.,  0.,  0.
+          ).finished();
     }
 
     /// @}
