@@ -59,7 +59,7 @@ namespace gtsam
     typedef typename const_selector<SymmetricBlockMatrixType, SymmetricBlockMatrix,
       typename Eigen::internal::traits<This>::Scalar&, typename Eigen::internal::traits<This>::Scalar>::type ScalarRef;
     typedef typename Eigen::internal::traits<This>::Scalar Scalar;
-    typedef typename Eigen::internal::traits<This>::Index Index;
+    typedef typename Eigen::DenseBase<This>::Index Index;
     static const Index ColsAtCompileTime = Eigen::Dynamic;
     static const Index RowsAtCompileTime = Eigen::Dynamic;
 
@@ -198,7 +198,7 @@ namespace gtsam
       _doAssign(other);
       return *this;
     }
-    
+
     This& operator=(const This& other)
     {
       // This version is required so GCC doesn't synthesize a default operator=.
@@ -304,7 +304,7 @@ namespace gtsam
         return myBlock_.transpose()(row, col);
       }
     }
-    
+
     template<typename OtherSymmetricBlockMatrixType>
     void _doAssign(const SymmetricBlockMatrixBlockExpr<OtherSymmetricBlockMatrixType>& other)
     {
