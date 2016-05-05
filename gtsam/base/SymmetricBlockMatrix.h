@@ -1,6 +1,6 @@
 /* ----------------------------------------------------------------------------
 
-* GTSAM Copyright 2010, Georgia Tech Research Corporation, 
+* GTSAM Copyright 2010, Georgia Tech Research Corporation,
 * Atlanta, Georgia 30332-0415
 * All Rights Reserved
 * Authors: Frank Dellaert, et al. (see THANKS for the full author list)
@@ -93,12 +93,12 @@ namespace gtsam {
         throw std::invalid_argument("Requested to create a SymmetricBlockMatrix with dimensions that do not sum to the total size of the provided matrix.");
       assertInvariants();
     }
-    
+
     /// Copy the block structure, but do not copy the matrix data.  If blockStart() has been
     /// modified, this copies the structure of the corresponding matrix view. In the destination
     /// SymmetricBlockMatrix, blockStart() will be 0.
     static SymmetricBlockMatrix LikeActiveViewOf(const SymmetricBlockMatrix& other);
-    
+
     /// Copy the block structure, but do not copy the matrix data. If blockStart() has been
     /// modified, this copies the structure of the corresponding matrix view. In the destination
     /// SymmetricBlockMatrix, blockStart() will be 0.
@@ -158,13 +158,13 @@ namespace gtsam {
     /** Access to full matrix, including any portions excluded by firstBlock() to other operations. */
     Eigen::SelfAdjointView<const Matrix, Eigen::Upper> matrix() const
     {
-      return matrix_;
+      return Eigen::SelfAdjointView<const Matrix, Eigen::Upper>(matrix_);
     }
 
     /** Access to full matrix, including any portions excluded by firstBlock() to other operations. */
     Eigen::SelfAdjointView<Matrix, Eigen::Upper> matrix()
     {
-      return matrix_;
+      return Eigen::SelfAdjointView<Matrix, Eigen::Upper>(matrix_);
     }
 
     /// Return the absolute offset in the underlying matrix of the start of the specified \c block.
