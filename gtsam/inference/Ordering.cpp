@@ -1,6 +1,6 @@
 /* ----------------------------------------------------------------------------
 
- * GTSAM Copyright 2010, Georgia Tech Research Corporation, 
+ * GTSAM Copyright 2010, Georgia Tech Research Corporation,
  * Atlanta, Georgia 30332-0415
  * All Rights Reserved
  * Authors: Frank Dellaert, et al. (see THANKS for the full author list)
@@ -18,6 +18,7 @@
 #include <vector>
 #include <limits>
 
+#include <boost/archive/detail/iserializer.hpp>
 #include <boost/format.hpp>
 
 #include <gtsam/inference/Ordering.h>
